@@ -10,10 +10,4 @@ Spring, 2015
 
 This project is part of the [Autocomplete Archive](https://github.com/gianordoli/autocomplete_archive).
 
-
-This is the search interface for the data. 
-
----
-
-## To do
-
+This repo contains some helper scripts to preprocess the data.
