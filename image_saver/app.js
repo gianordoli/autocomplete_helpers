@@ -32,15 +32,15 @@ var nextIteration = function(i){
 
 var downloadImage = function(i){
 
-	console.log('Query: ' + records[i]['query']);
-	console.log('URL? ' + records[i]['url']);
-	console.log('Saved? ' + records[i]['saved']);
-
 	if(records[i]['url'] != undefined &&
 	   records[i]['url'] != '' &&				// there's an url
 	   records[i]['saved'] == undefined &&		// the file hasn't been saved yet
 	   records[i]['language_code'] == languageCode){
 
+		console.log('Language: ' + records[i]['language_name']);
+		console.log('Query: ' + records[i]['query']);
+		console.log('URL? ' + records[i]['url']);
+		console.log('Saved? ' + records[i]['saved']);
 		console.log('******************************************');
 		console.log('Requesting download...');
 
@@ -88,6 +88,6 @@ var updatedRecords = records;
 
 var path = '../../../../../Desktop/_images/';
 var extensions = ['jpg', 'jpeg', 'png', 'gif', 'tif', 'tiff', 'bmp'];
-var languageCode = 'es';
+var languageCode = 'it';
 
 downloadImage(0);

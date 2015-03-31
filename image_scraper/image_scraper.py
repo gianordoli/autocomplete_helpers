@@ -17,7 +17,7 @@ encodings = {
     'Lithuanian': 'iso-8859-4'
 }
 
-exceptions = ['youtube', 'wp-content/uploads', 'wallpaper', 'promo.capitalradio.co.uk']
+exceptions = ['youtube', 'wp-content/uploads', 'wallpaper', 'promo.capitalradio.co.uk', 'deviantart', 'tsquirrel', 'compass.xbox.com']
 extensions = ['.jpg', '.jpeg', '.gif', '.png', '.tif', '.tiff', '.bmp'];
 
 def checkExtension(string):
@@ -39,7 +39,8 @@ def containsException(string):
     return False
 
 def fixDoubleEscape(string):
-    new_string = string.replace('2520', '20')
+    # new_string = string.replace('2520', '20')
+    new_string = string.replace('%25', '%')    
     return new_string
 
 def decodeString(string, language_name):
@@ -90,7 +91,7 @@ jsonFile.close()
 for i in range(len(data)):
 # for i in range(len(data) - 1, 0, -1):
 
-    if(data[i]['language_name'] == 'Spanish'):
+    if(data[i]['language_name'] == 'Italian'):
 
         # Begin scraping only if:
         # * the record doesn't have an url yet
@@ -139,6 +140,8 @@ for i in range(len(data)):
                     if '/url?q=' in link:
                         sys.exit("Error message")
 
+                    # URL escape characters are being encoded twice
+                    # %20 > %2520
                     link = fixDoubleEscape(link)
                     print("********" + link)
 
