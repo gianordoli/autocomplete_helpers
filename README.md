@@ -1,4 +1,4 @@
-# Autocomplete Archive: Images Search
+# Autocomplete Archive: Helpers
 
 MFA Design and Technology, Parsons The New School for Design
 
