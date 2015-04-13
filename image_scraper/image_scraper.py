@@ -90,7 +90,7 @@ jsonFile.close()
 for i in range(len(data)):
 # for i in range(len(data) - 1, 0, -1):
 
-    if(data[i]['language_name'] == 'Finnish'):
+    if(data[i]['language_name'] == 'Norwegian'):
 
         # Begin scraping only if:
         # * the record doesn't have an url yet
