@@ -17,7 +17,7 @@ encodings = {
     'Lithuanian': 'iso-8859-4'
 }
 
-exceptions = ['youtube', 'wp-content/uploads', 'wallpaper', 'promo.capitalradio.co.uk', 'deviantart', 'tsquirrel', 'compass.xbox.com']
+exceptions = ['youtube', 'wp-content', 'wallpaper', 'promo.capitalradio.co.uk', 'deviantart', 'tsquirrel', 'compass.xbox.com', 'xboxlive.com', 'freehighresolutionimages.org', 'widehdwalls.com', 'nextranks.com', '?', 'football.co.uk', 'wordpress', 'www1.wdr.de', 'feelgrafix.com', 'dreamatico.com', 'img4.allvoices.com', 'funmozar', 'jogandoonline.com.br', 'pinterest', 'bedroomidea', 'valentinescards', 'onepiece.com', 'fansshare.com', 'viraldot.com', 'sharecdn.com']
 extensions = ['.jpg', '.jpeg', '.gif', '.png', '.tif', '.tiff', '.bmp'];
 
 def checkExtension(string):
@@ -56,11 +56,10 @@ def decodeString(string, language_name):
 config = {
     'SCRAPING': {
         # 'keyword': 'ma',
-        'search_engines': 'google, bing',
-        # 'search_engines': 'bing',
+        'search_engines': 'google, yahoo',
         'search_type': 'image',
         'num_pages_for_keyword': 1,
-        'num_results_per_page': 10,
+        'num_results_per_page': 20,
         'num_workers': 4,
         'scrape_method': 'selenium'
         # 'scrape_method': 'http'
@@ -72,7 +71,7 @@ config = {
     #     # this makes scraping with browsers headless
     #     # and quite fast.
         # 'sel_browser': 'phantomjs'
-        'sel_browser': 'Firefox'
+        'sel_browser': 'Firefox'    
     }    
 }
 
@@ -91,7 +90,7 @@ jsonFile.close()
 for i in range(len(data)):
 # for i in range(len(data) - 1, 0, -1):
 
-    if(data[i]['language_name'] == 'Italian'):
+    if(data[i]['language_name'] == 'Finnish'):
 
         # Begin scraping only if:
         # * the record doesn't have an url yet
@@ -107,6 +106,8 @@ for i in range(len(data)):
             try:
                 search = scrape_with_config(config)
                 print(search.serps)
+                print(len(search.serps[0].links))
+                print(len(search.serps[1].links))
 
                 # No results?
                 if (len(search.serps[0].links) and len(search.serps[1].links)) == 0:

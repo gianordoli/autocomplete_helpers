@@ -86,8 +86,8 @@ var records = jf.readFileSync('../db/images_2015_03_24.json');
 var updatedRecords = records;
 // console.log(records);
 
-var path = '../../../../../Desktop/_images/';
+var path = '../../../../../Desktop/_thesis_2/images/';
 var extensions = ['jpg', 'jpeg', 'png', 'gif', 'tif', 'tiff', 'bmp'];
-var languageCode = 'it';
+var languageCode = 'fi';
 
 downloadImage(0);
