@@ -9,7 +9,7 @@ import re
 
 encodings = {
     'Croatian': 'iso-8859-2',
-    'Polish': 'iso-8859-13',
+    'Polish': 'iso-8859-2',
     'Slovak': 'iso-8859-2',
     'Czech': 'iso-8859-2',
     'Swedish': 'iso-8859-1',
@@ -17,7 +17,7 @@ encodings = {
     'Lithuanian': 'iso-8859-4'
 }
 
-exceptions = ['youtube', 'wp-content', 'wallpaper', 'promo.capitalradio.co.uk', 'deviantart', 'tsquirrel', 'compass.xbox.com', 'xboxlive.com', 'freehighresolutionimages.org', 'widehdwalls.com', 'nextranks.com', '?', 'football.co.uk', 'wordpress', 'www1.wdr.de', 'feelgrafix.com', 'dreamatico.com', 'img4.allvoices.com', 'funmozar', 'jogandoonline.com.br', 'pinterest', 'bedroomidea', 'valentinescards', 'onepiece.com', 'fansshare.com', 'viraldot.com', 'sharecdn.com']
+exceptions = ['youtube', 'wp-content', 'wallpaper', 'promo.capitalradio.co.uk', 'deviantart', 'tsquirrel', 'compass.xbox.com', 'xboxlive.com', 'freehighresolutionimages.org', 'widehdwalls.com', 'nextranks.com', '?', 'football.co.uk', 'wordpress', 'www1.wdr.de', 'feelgrafix.com', 'dreamatico.com', 'img4.allvoices.com', 'funmozar', 'jogandoonline.com.br', 'pinterest', 'bedroomidea', 'valentinescards', 'onepiece.com', 'fansshare.com', 'viraldot.com', 'sharecdn.com', 'coverium.com', 'handson.provocateuse', 'no.hairdresser-models.eu', 'www.web-kuchi.ch', 'media1.gameinformer.com']
 extensions = ['.jpg', '.jpeg', '.gif', '.png', '.tif', '.tiff', '.bmp'];
 
 def checkExtension(string):
@@ -71,7 +71,7 @@ config = {
     #     # this makes scraping with browsers headless
     #     # and quite fast.
         # 'sel_browser': 'phantomjs'
-        'sel_browser': 'Firefox'    
+        # 'sel_browser': 'Firefox'    
     }    
 }
 
@@ -90,7 +90,7 @@ jsonFile.close()
 for i in range(len(data)):
 # for i in range(len(data) - 1, 0, -1):
 
-    if(data[i]['language_name'] == 'Norwegian'):
+    if(data[i]['language_name'] == 'Hungarian'):
 
         # Begin scraping only if:
         # * the record doesn't have an url yet

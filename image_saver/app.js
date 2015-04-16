@@ -88,6 +88,6 @@ var updatedRecords = records;
 
 var path = '../../../../../Desktop/_thesis_2/images/';
 var extensions = ['jpg', 'jpeg', 'png', 'gif', 'tif', 'tiff', 'bmp'];
-var languageCode = 'fi';
+var languageCode = 'hu';
 
 downloadImage(0);
