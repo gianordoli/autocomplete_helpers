@@ -8,7 +8,7 @@ var google = require('googleapis');
 /*-------------------------------------------------*/
 
 // 1. Define service
-var service = 'images';
+var service = 'youtube';
 
 // 2. Read all records
 var originalRecords = jf.readFileSync('data/' + service + '.json');
@@ -119,7 +119,7 @@ var searchImages = function(i, db, collection){
 var searchYoutube = function(i, db, collection){
     
     var query = uniqueRecords[i]['query'];
-    console.log('Called searchYoutube for ' + query);
+    console.log('Called searchYoutube for ' + query + ', ' + uniqueRecords[i]['language_code']);
 
     var youtube = google.youtube('v3');
     var API_KEY = 'AIzaSyBIYs4yJNHOxI-kk_x-wIoGHWRyFUoil9M';
@@ -127,7 +127,8 @@ var searchYoutube = function(i, db, collection){
     youtube.search.list({
         auth: API_KEY,
         q: query,
-        part: 'snippet'
+        part: 'snippet',
+        relevanceLanguage: uniqueRecords[i]['language_code']
     }, function(err, response){
         if(err){
             throw err;
