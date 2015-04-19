@@ -1,0 +1,19 @@
+{
+  "name": "image_scraper_node",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.55.0",
+    "cheerio": "^0.19.0",
+    "jsonfile": "^2.0.0",
+    "googleapis": "^2.0.2",
+    "mongodb": "^2.0.27",
+    "underscore": "^1.8.3"
+  }
+}
