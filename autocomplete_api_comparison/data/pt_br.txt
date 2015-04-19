@@ -1,0 +1,261 @@
+country	isa
+aliexpress	aliexpress
+americanas	americanas
+azul	azul
+avianca	amazon
+avon	avianca
+amazon	avon
+anhanguera	anhanguera
+apple	apple
+alelo	alelo
+amil	amil
+baixaki	baixaki
+bradesco	bradesco
+bol	bol
+bbb15	bbb15
+banco do brasil	banco do brasil
+buscape	buscape
+badoo	badoo
+bom negócio	bom negócio
+banco itau	banco itau
+bol mail	baixar musicas
+caixa	caixa
+correios	correios
+click jogos	click jogos
+casas bahia	casas bahia
+climatempo	climatempo
+cinemark	cinemark
+claro	claro
+cifra club	cifra club
+ciee	ciee
+cep	cep
+dubsmash	dubsmash
+detran	detran
+detran rj	detran rj
+decolar	decolar
+detran mg	detran mg
+detran pr	detran pr
+dafiti	dafiti
+detran rs	detran rs
+dicionario	dicionario
+detran pe	dia do beijo
+extra	extra
+enem	enem
+email	email
+ebay	ebay
+espn	espn
+educa mais brasil	educa mais brasil
+estacio	estacio
+estadao	estadao
+ego	ego
+estante virtual	estante virtual
+facebook	facebook
+friv	friv
+fies	fies
+filmes online	filmes online
+frases de amor	frases de amor
+frases	frases
+fipe	fipe
+filmes	filmes
+frozen	frozen
+feriados 2015	feriados 2015
+google	google
+gmail	gmail
+globo	globo
+google tradutor	google tradutor
+google maps	google maps
+globo esporte	globo esporte
+g1	g1
+gol	gol
+galinha pintadinha	galinha pintadinha
+gshow	gshow
+hotmail	hotmail
+habbo	habbo
+hsbc	hsbc
+hipercard	hipercard
+honda	honda
+hotel urbano	hotel urbano
+horoscopo	horoscopo
+henrique e juliano	henrique e juliano
+happy wheels	happy wheels
+hapvida	hapvida
+itau	itau
+ig	instagram
+instagram	ig
+imperio	imperio
+inss	inss
+ipva	ipva
+infojobs	infojobs
+itaucard	itaucard
+itunes	itunes
+igmail	igmail
+jogos	jogos
+jogos de vestir	jogos de vestir
+java	java
+jogos da barbie	jogos da barbie
+justin bieber	justin bieber
+jogos de moto	jogos de moto
+jogo do bicho	jogo do bicho
+jogos de tiro	jogos de tiro
+jornal extra	jornal extra
+jovem pan	jovem pan
+kboing	kboing
+kizi	kizi
+kinoplex	krafta
+kogama	kinoplex
+kanui	kogama
+katy perry	kanui
+kabum	katy perry
+kalunga	kabum
+kim kardashian	kalunga
+keepvid	kim kardashian
+lancenet	lancenet
+lojas americanas	lojas americanas
+lotofacil	lotofacil
+linkedin	linkedin
+loterias	loterias
+letras de musicas	letras de musicas
+league of legends	league of legends
+leroy merlin	leroy merlin
+luan santana	luan santana
+loteria federal	loteria federal
+mercado livre	mercado livre
+maps	maps
+mega filmes	mega filmes
+msn	msn
+mega sena	mega sena
+magazine luiza	magazine luiza
+mapas	mapas
+minecraft	minecraft
+malhação	malhação
+mec	mec
+netflix	netflix
+netshoes	netshoes
+net	net
+natura	natura
+novela imperio	novela imperio
+noticias	noticias
+nota fiscal	nota fiscal
+nextel	naruto project
+naruto project	nextel
+nissan	nissan
+olx	olx
+outlook	outlook
+oi	oi
+orkut	orkut
+oi mail	o globo
+o globo	oi mail
+ojogos	ojogos
+one direction	one direction
+oi torpedo	oi torpedo
+o dia	o dia
+previsão do tempo	previsão do tempo
+palco mp3	palco mp3
+pci concursos	pci concursos
+prouni	prouni
+ponto frio	ponto frio
+peppa pig	peppa pig
+palmeiras	palmeiras
+play store	play store
+paola oliveira	paola oliveira
+previdencia social	previdencia social
+quina	quina
+qual operadora	qual operadora
+qualicorp	qualicorp
+questoes de concurso	questoes de concurso
+quatro rodas	quatro rodas
+quem disse berenice	quem disse berenice
+quadrix	quadrix
+que mal te fiz eu	que mal te fiz eu
+quebra link	quebra link
+quaresma	quaresma
+receita federal	receita federal
+r7	r7
+ricardo eletro	ricardo eletro
+rastreamento correios	rastreamento correios
+reclame aqui	reclame aqui
+resultado mega sena	resultado mega sena
+resumo da novela imperio	resumo da novela imperio
+riachuelo	riachuelo
+resultado lotofacil	resultado lotofacil
+radio uol	radio uol
+santander	santander
+sisu	sisu
+shoptime	shoptime
+saraiva	saraiva
+submarino	submarino
+sua musica	sua musica
+sky	sky
+skype	skype
+sodexo	sodexo
+sptrans	sptrans
+tradutor	tradutor
+terra	terra
+twitter	twitter
+tabela fipe	tabela fipe
+tam	tam
+tubidy	tubidy
+tv online	tv online
+tudo gostoso	tudo gostoso
+tim	tim
+transformice	transformice
+uol	uol
+unopar	unopar
+unip	unip
+ufc	ufc
+utorrent	utorrent
+unimed	unimed
+ultrafarma	ultrafarma
+uninove	uninove
+unhas decoradas	unhas decoradas
+uai	uai
+vagalume	vagalume
+vivo	vivo
+voegol	voegol
+vunesp	vunesp
+velocimetro	velocimetro
+veja	veja
+videos	videos
+ver tv online	ver tv online
+volkswagen	volkswagen
+voe azul	voe azul
+whatsapp	whatsapp
+walmart	walmart
+webmotors	webmotors
+whatsapp web	whatsapp web
+wikipedia	wikipedia
+winrar	winrar
+whatsapp plus	whatsapp plus
+webmail	webmail
+wsl	wsl
+warface	warface
+xbox live	xbox live
+xbox one	xbox one
+xbox	xbox
+xbox 360	xbox 360
+xperia z3	xperia z3
+xiaomi	xiaomi
+xablau	xablau
+xafurdaria	xafurdaria
+xperia z2	xperia z2
+xenhenhem	xenhenhem
+youtube	youtube
+yahoo	yahoo
+you	you
+y	y
+youtube mp3	youtube mp3
+yamaha	yamaha
+yahoo respostas	yahoo respostas
+yes filmes	yes filmes
+yepi	yepi
+yorkshire	yorkshire
+zero hora	zero hora
+zap imoveis	zap imoveis
+zoom	zoom
+zumba	zumba
+z8games	z8games
+zeze di camargo e luciano	zeze di camargo e luciano
+zenfone 5	zenfone 5
+zayn malik	zayn malik
+zac efron	zac efron
+zeca pagodinho	zara

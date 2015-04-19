@@ -10,16 +10,16 @@ var init = function(){
 
 	getDateRangeDB(function(range){
 		console.log('Got date range.');
-		console.log(range);
-		// Get the last day only:
-		range[0] = range[1] - 86400000; // Last day - 1	// console.log(new Date(parseInt(request.body['date[]'][0])).toUTCString());
+		console.log(range);	// Full db range
 
-		getDomainsByService('images', function(domains){
+		var service = 'youtube';
+
+		getDomainsByService(service, function(domains){
 			console.log('Filtered domains:');
 			console.log(domains);
 			var params = {
 				'date': {'$gt': new Date(range[0]), '$lte': new Date(range[1])},
-				'service': 'images',
+				'service': service,
 				'domain': {'$in': domains}
 			}
 			searchMongoDB(params, function(records){
@@ -27,7 +27,7 @@ var init = function(){
 				console.log(records.length);
 
 	    		var newRecords = [];
-	    		var filename = dateToFilename(records[0].date);
+	    		var filename = 'db/' + service + '.json';
 
 	    		for(var i = 0; i < records.length; i++){
 
@@ -39,6 +39,7 @@ var init = function(){
 							ranking: j,
 						    language_code: records[i].language,
 						    language_name: getLanguageName(records[i].language),
+						    service: 'images',
 							date: records[i].date
 						}
 						// console.log(obj);
@@ -49,7 +50,7 @@ var init = function(){
 	    		// saveToDB(newRecords, 0);
 				jf.writeFile(filename, newRecords, function(err) {
 					if(err) throw err;
-					console.log('recrds succesfully saved to JSON file.');
+					console.log('records succesfully saved to JSON file.');
 				});	
 			});	
 		});
@@ -61,15 +62,6 @@ var getLanguageName = function(languageCode){
 		return item.language_a_code == languageCode;
 	});
 	return loadedCountries[i].language_a_name;	
-}
-
-var dateToFilename = function(date){
-	var year = date.getFullYear();
-	var month = date.getMonth() + 1;
-	if(month < 10) month = '0' + month;
-	var day = date.getDate();
-	var filename = 'images_' + year + '_' + month + '_' + day + '.json';
-	return filename;
 }
 
 // function saveToDB(records, i){
@@ -136,7 +128,9 @@ function searchMongoDB(params, callback){
 
 var getDomainsByService = function(service, callback){
 	var filteredCountries = _.filter(loadedCountries, function(item, index, list){
-		return item[service] == 1;
+		// Now also filtering by 'functional,' that is,
+		// languages that don't have encoding problems
+		return item[service] == 1 && item['functional'] == 1;
 	});
 	var filteredDomains = _.map(filteredCountries, function(item){
 		return item.domain;
