@@ -157,11 +157,12 @@ function saveToMongoDB(record, i, db, collection){
                 // Wait a bit so we don't break Google's API limits
                 setTimeout(function(){
                     i ++;
-                    searchYoutube(i, db, collection);
+                    if(service == 'youtube'){
+                        searchYoutube(i, db, collection);    
+                    }
                 }, 1000);
             }else{
-                db.close();         // close database                       
-                // callback(false);    // err = false                      
+                db.close();         // close database                  
             }                   
         }
     });
