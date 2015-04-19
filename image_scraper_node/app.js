@@ -8,7 +8,7 @@ var google = require('googleapis');
 /*-------------------------------------------------*/
 
 // 1. Define service
-var service = 'youtube';
+var service = 'images';
 
 // 2. Read all records
 var originalRecords = jf.readFileSync('data/' + service + '.json');
@@ -71,49 +71,58 @@ MongoClient.connect('mongodb://127.0.0.1:27017/autocomplete', function(err, db) 
             console.log('Reduced unique records to ' + uniqueRecords.length);
 
             // D) Search
-            searchYoutube(0, db, collection);
-
+            if(service == 'youtube'){
+                searchYoutube(0, db, collection);
+            }else if(service == 'images'){
+                searchImages(0, db, collection);
+            }
         });         
 });
 
-
-// var query = 'x stitch patterns tractor';
-
-// var baseUrl = 'https://www.google.com/search?site=imghp&tbm=isch&q=X';
-
-// var link = baseUrl.replace('X', query);
-// link += "&hl=" + images[query]['language_code'];
-// while(link.indexOf(' ') > -1){
-// 	link = link.replace(' ', '+') 
-// }
+/*-------------------- IMAGES --------------------*/
+// 5A. Search Images
 
 // console.log(link);
+var searchImages = function(i, db, collection){
 
-/*-------------------- IMAGES --------------------*/
-// 	request(link, function(error, response, html){
-// 	    if(!error){
-// 	        var $ = cheerio.load(html);
-// 	        // var content = $('body').text();
-// 	        var results = $('img');
-// 	        // results[1];
-// 	        for(var i = 0; i < images.length; i++){
-// 	        	console.log(i);
-// 	        	console.log($(images[i]).attr('src'));
-// 	        }
-// 	        // res.end(content);
-// 	    }
-// 	});
+    var query = uniqueRecords[i]['query'];
+    console.log('Called searchImages for ' + query);
+
+    var baseUrl = 'https://www.google.com/search?site=imghp&tbm=isch&q=X';
+
+    var link = baseUrl.replace('X', query);
+    link += "&hl=" + uniqueRecords[i]['language_code'];
+    while(link.indexOf(' ') > -1){
+        link = link.replace(' ', '+') 
+    }
+
+    request(link, function(error, response, html){
+        if(!error){
+            var $ = cheerio.load(html);
+            // var content = $('body').text();
+            var results = $('img');
+            var imgSrc = $(results[1]).attr('src');
+            // console.log(imgSrc);
+            var record = {
+                query: query,
+                thumbnail: imgSrc
+            }
+            saveToMongoDB(record, i, db, collection);
+        }
+    });
+}
+	
 
 
 /*-------------------- YOUTUBE -------------------*/
 // 5B. Search Youtube
-var youtube = google.youtube('v3');
-var API_KEY = 'AIzaSyBIYs4yJNHOxI-kk_x-wIoGHWRyFUoil9M';
-
 var searchYoutube = function(i, db, collection){
     
     var query = uniqueRecords[i]['query'];
     console.log('Called searchYoutube for ' + query);
+
+    var youtube = google.youtube('v3');
+    var API_KEY = 'AIzaSyBIYs4yJNHOxI-kk_x-wIoGHWRyFUoil9M';
 
     youtube.search.list({
         auth: API_KEY,
@@ -159,6 +168,8 @@ function saveToMongoDB(record, i, db, collection){
                     i ++;
                     if(service == 'youtube'){
                         searchYoutube(i, db, collection);    
+                    }else if(service == 'images'){
+                        searchImages(i, db, collection);
                     }
                 }, 1000);
             }else{
