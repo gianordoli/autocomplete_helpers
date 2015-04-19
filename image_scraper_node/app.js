@@ -32,7 +32,7 @@ originalRecords.forEach(function(item, index, list){
 console.log('Unique records: ' + Object.keys(uniqueRecords).length);
 
 // 4. Search for records already stored in the db
-MongoClient.connect('mongodb://127.0.0.1:27017/autocomplete', function(err, db) {
+MongoClient.connect('mongodb://127.0.0.1:27017/thesis', function(err, db) {
         
         console.log('Connecting to DB...');
         
