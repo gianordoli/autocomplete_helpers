@@ -4,6 +4,7 @@ var cheerio = require('cheerio');
 var jf = require('jsonfile');
 var MongoClient = require('mongodb').MongoClient;
 var _ = require('underscore');
+var google = require('googleapis');
 /*-------------------------------------------------*/
 
 // 1. Define service
@@ -32,31 +33,46 @@ console.log('Unique records: ' + Object.keys(uniqueRecords).length);
 
 // 4. Search for records already stored in the db
 MongoClient.connect('mongodb://127.0.0.1:27017/autocomplete', function(err, db) {
+        
         console.log('Connecting to DB...');
+        
         if(err) throw err;
-        console.log('Connected.');
+        
+        console.log('Connected to MongoDB.');
+        
         var collection = db.collection(service);
 
         collection.find({}).toArray(function(err, results) {
-            console.dir(results);
+            // console.dir(results);
+            console.log('Found ' + results.length + ' results');
 
-            // Reduce results to a simple list of queries
+            // A) Reduce results to a simple list of queries
             results = _.map(results, function(item, index, list){
                 return item['query'];
             });
             // console.log(results);
 
-            // Filter out queries in db from the uniqueRecords collection
+            // B) Filter out queries in db from the uniqueRecords collection
             uniqueRecords = _.omit(uniqueRecords, function(value, key, collection){
                 return results.indexOf(key) > -1; 
             });
-            console.log(Object.keys(uniqueRecords).length);
+            // console.log(Object.keys(uniqueRecords).length);
             // console.log(uniqueRecords);
 
-            // Search
-            // searchYoutube(uniqueRecords[0])
+            // C) Turn the collection into an array,
+            // so we can keep track of the iterations
+            uniqueRecords = _.map(uniqueRecords, function(value, key, collection){
+                return {
+                    query: key,
+                    language_code: value['language_code']
+                }
+            });
+            // console.log(uniqueRecords);
+            console.log('Reduced unique records to ' + uniqueRecords.length);
 
-            db.close(); // Let's close the db 
+            // D) Search
+            searchYoutube(0, db, collection);
+
         });         
 });
 
@@ -90,32 +106,63 @@ MongoClient.connect('mongodb://127.0.0.1:27017/autocomplete', function(err, db) 
 
 
 /*-------------------- YOUTUBE -------------------*/
-var google = require('googleapis');
+// 5B. Search Youtube
 var youtube = google.youtube('v3');
 var API_KEY = 'AIzaSyBIYs4yJNHOxI-kk_x-wIoGHWRyFUoil9M';
 
-var searchYoutube = function(query){
+var searchYoutube = function(i, db, collection){
+    
+    var query = uniqueRecords[i]['query'];
+    console.log('Called searchYoutube for ' + query);
+
     youtube.search.list({
         auth: API_KEY,
-        q: 'anitta',
+        q: query,
         part: 'snippet'
     }, function(err, response){
-        console.log(err);
-        console.log(response);
-        // console.log(JSON.stringify(response['items'][1]));
+        if(err){
+            throw err;
+        }else{
+            // console.log(response);
+            // console.log(JSON.stringify(response['items'][1]));
 
-        for(var i = 0; i < response['items'].length; i++){
-            console.log(i);
-            if(response['items'][i]['id']['kind'] == 'youtube#video'){
-                var record = {
-                    query: query,
-                    videoId: response['items'][i]['id']['videoId'],
-                    thumbnail: response['items'][i]['snippet']['thumbnails']['high']['url']
-                }
-                break;
-            }  
+            for(var j = 0; j < response['items'].length; j++){
+                console.log(j);
+                if(response['items'][j]['id']['kind'] == 'youtube#video'){
+                    var record = {
+                        query: query,
+                        videoId: response['items'][j]['id']['videoId'],
+                        thumbnail: response['items'][j]['snippet']['thumbnails']['high']['url']
+                    }
+                    saveToMongoDB(record, i, db, collection);
+                    break;
+                }  
+            }
         }
     });
 }
 
-// searchYoutube('anitta');
+// 6. Save to MongoDB
+function saveToMongoDB(record, i, db, collection){
+
+    console.log('Saving data to mongoDB.')
+
+    collection.insert(record, function(err, docs) {
+        if(err){
+            throw err;
+        }else{
+            console.log('Obj succesfully saved to DB.');    
+            // Next iteration
+            if(i < 10){
+                // Wait a bit so we don't break Google's API limits
+                setTimeout(function(){
+                    i ++;
+                    searchYoutube(i, db, collection);
+                }, 1000);
+            }else{
+                db.close();         // close database                       
+                // callback(false);    // err = false                      
+            }                   
+        }
+    });
+}
