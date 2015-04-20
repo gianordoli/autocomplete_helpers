@@ -12,7 +12,7 @@ var init = function(){
 		console.log('Got date range.');
 		console.log(range);	// Full db range
 
-		var service = 'images';
+		var service = 'web';
 
 		getDomainsByService(service, function(domains){
 			console.log('Filtered domains:');
@@ -39,7 +39,7 @@ var init = function(){
 							ranking: j,
 						    language_code: records[i].language,
 						    language_name: getLanguageName(records[i].language),
-						    service: 'images',
+						    service: service,
 							date: records[i].date
 						}
 						// console.log(obj);

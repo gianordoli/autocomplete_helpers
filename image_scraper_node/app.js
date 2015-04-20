@@ -11,42 +11,62 @@ var google = require('googleapis');
 var service = 'images';
 var google_language_code = 'pt-BR';
 var bing_language_code = 'pt-BR';
+var uniqueRecords = {};
 
 // 2. Read all records
-var originalRecords = jf.readFileSync('data/' + service + '.json');
+// var originalRecords = jf.readFileSync('data/' + service + '.json');
 // console.log(originalRecords);
-console.log('Original records: ' + originalRecords.length);
+// console.log('Original records: ' + originalRecords.length);
 
-// 3. Create list of unique ones
-var uniqueRecords = {};
-originalRecords.forEach(function(item, index, list){
-    // console.log(item['query']);
-    var query = item['query'];
-    // If the item is not in the collection yet...
-    if(uniqueRecords[query] === undefined && item['language_code'] == google_language_code){
-        uniqueRecords[query] = {
-        	language_code: item['language_code']
-        };
-    }
-    // console.log(query + ', ' + item['language_name']);
-});
-// console.log(uniqueRecords);
-console.log('Unique records: ' + Object.keys(uniqueRecords).length);
-
-// 4. Search for records already stored in the db
 MongoClient.connect('mongodb://127.0.0.1:27017/thesis', function(err, db) {
-        
+    
     console.log('Connecting to DB...');
     
     if(err) throw err;
     
-    console.log('Connected to MongoDB.');
-    
+    console.log('Connected.');
+
+    var recordsCollection = db.collection('records');
+
+    recordsCollection.find({
+        // 'language_code': google_language_code
+        service: 'images'
+    }).toArray(function(err, results) {
+
+        console.log('Found ' + results.length + ' total results.');
+        filterUniqueRecords(results, db);
+
+    });
+});
+
+// 3. Create list of unique ones
+function filterUniqueRecords(originalRecords, db){
+
+    originalRecords.forEach(function(item, index, list){
+        // console.log(item['query']);
+        var query = item['query'];
+        // If the item is not in the collection yet...
+        if(uniqueRecords[query] === undefined){
+            uniqueRecords[query] = {
+                language_code: item['language_code']
+            };
+        }
+        // console.log(query + ', ' + item['language_name']);
+    });
+    // console.log(uniqueRecords);
+    console.log('Unique records: ' + Object.keys(uniqueRecords).length);
+
+    checkAlreadySaved(db);  
+}
+
+// 4. Search for records already stored in the db
+function checkAlreadySaved(db){
+        
     var collection = db.collection(service);
 
     collection.find({}).toArray(function(err, results) {
         // console.dir(results);
-        console.log('Found ' + results.length + ' results');
+        console.log('Found ' + results.length + ' results already saved.');
 
         // A) Reduce results to a simple list of queries
         results = _.map(results, function(item, index, list){
@@ -73,13 +93,13 @@ MongoClient.connect('mongodb://127.0.0.1:27017/thesis', function(err, db) {
         console.log('Reduced unique records to ' + uniqueRecords.length);
 
         // D) Search
-        if(service == 'youtube'){
-            searchYoutube(0, db, collection);
-        }else if(service == 'images'){
-            searchImages(0, db, collection);
-        }
+        // if(service == 'youtube'){
+        //     searchYoutube(0, db, collection);
+        // }else if(service == 'images'){
+        //     searchImages(0, db, collection);
+        // }
     });
-});
+}
 
 
 /*-------------------- IMAGES --------------------*/
