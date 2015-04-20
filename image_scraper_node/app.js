@@ -9,6 +9,8 @@ var google = require('googleapis');
 
 // 1. Define service
 var service = 'images';
+var google_language_code = 'pt-BR';
+var bing_language_code = 'pt-BR';
 
 // 2. Read all records
 var originalRecords = jf.readFileSync('data/' + service + '.json');
@@ -21,7 +23,7 @@ originalRecords.forEach(function(item, index, list){
     // console.log(item['query']);
     var query = item['query'];
     // If the item is not in the collection yet...
-    if(uniqueRecords[query] === undefined){
+    if(uniqueRecords[query] === undefined && item['language_code'] == google_language_code){
         uniqueRecords[query] = {
         	language_code: item['language_code']
         };
@@ -89,7 +91,7 @@ var searchImages = function(i, db, collection){
     while(query.indexOf(' ') > -1){
         query = query.replace(' ', '+') 
     }
-    var market = 'pt-BR';
+    var market = bing_language_code;
     var adult = 'Off';
     var AppId = 'cZOFS5HD5kC6Mwq+VgLuv96ta9qU7hhRTrw2YS8R51k';
     var encodedAppKey = new Buffer(AppId).toString('base64');
@@ -214,7 +216,7 @@ function saveToMongoDB(record, i, db, collection){
         }else{
             console.log('Obj succesfully saved to DB.');    
             // Next iteration
-            if(i < 10){
+            if(i < uniqueRecords.length - 1){
                 console.log('Calling next iteration.');
                 // Wait a bit so we don't break Google's API limits
                 setTimeout(function(){
