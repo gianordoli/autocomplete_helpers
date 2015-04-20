@@ -29,8 +29,8 @@ MongoClient.connect('mongodb://127.0.0.1:27017/thesis', function(err, db) {
     var recordsCollection = db.collection('records');
 
     recordsCollection.find({
-        // 'language_code': google_language_code
-        service: 'images'
+        'language_code': google_language_code,
+        'service': service
     }).toArray(function(err, results) {
 
         console.log('Found ' + results.length + ' total results.');
@@ -93,11 +93,11 @@ function checkAlreadySaved(db){
         console.log('Reduced unique records to ' + uniqueRecords.length);
 
         // D) Search
-        // if(service == 'youtube'){
-        //     searchYoutube(0, db, collection);
-        // }else if(service == 'images'){
-        //     searchImages(0, db, collection);
-        // }
+        if(service == 'youtube'){
+            searchYoutube(0, db, collection);
+        }else if(service == 'images'){
+            searchImages(0, db, collection);
+        }
     });
 }
 
