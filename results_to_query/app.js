@@ -12,7 +12,7 @@ var init = function(){
 		console.log('Got date range.');
 		console.log(range);	// Full db range
 
-		var service = 'youtube';
+		var service = 'images';
 
 		getDomainsByService(service, function(domains){
 			console.log('Filtered domains:');
@@ -47,11 +47,22 @@ var init = function(){
 	    			}
 	    		}
 	    		console.log(newRecords);
-	    		// saveToDB(newRecords, 0);
-				jf.writeFile(filename, newRecords, function(err) {
+
+				MongoClient.connect('mongodb://127.0.0.1:27017/thesis', function(err, db) {
+					console.log('Connecting to DB...');
 					if(err) throw err;
-					console.log('records succesfully saved to JSON file.');
-				});	
+					console.log('Connected.');
+					var collection = db.collection('records');
+
+	    			saveToDB(newRecords, 0, db, collection);
+	    		});
+
+				// jf.writeFile(filename, newRecords, function(err) {
+				// 	if(err) throw err;
+				// 	console.log('records succesfully saved to JSON file.');
+				// });
+
+
 			});	
 		});
 	});
@@ -64,28 +75,22 @@ var getLanguageName = function(languageCode){
 	return loadedCountries[i].language_a_name;	
 }
 
-// function saveToDB(records, i){
-// 	MongoClient.connect('mongodb://127.0.0.1:27017/autocomplete', function(err, db) {
-// 		console.log('Connecting to DB...');
-// 		if(err) throw err;
-// 		console.log('Connected.');
-// 		var collection = db.collection('images');
+function saveToDB(records, i, db, collection){
 
-// 		collection.insert(records[i], function(err, docs) {
-// 			if(err){
-// 				throw err;
-// 			}else{
-// 				console.log('Obj succesfully saved to DB.');
-// 				i++;
-// 				if(i < records.length){
-// 					saveToDB(records, i);
-// 				}else{
-// 					db.close();
-// 				}
-// 			}
-// 		});
-// 	});    		
-// }
+		collection.insert(records[i], function(err, docs) {
+			if(err){
+				throw err;
+			}else{
+				console.log('Obj succesfully saved to DB.');
+				i++;
+				if(i < records.length){
+					saveToDB(records, i, db, collection);
+				}else{
+					db.close();
+				}
+			}
+		}); 		
+}
 
 function getDateRangeDB(callback){
 	console.log('Called getDateRangeDB.')
