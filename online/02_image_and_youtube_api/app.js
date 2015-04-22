@@ -5,12 +5,13 @@ var jf = require('jsonfile');
 var MongoClient = require('mongodb').MongoClient;
 var _ = require('underscore');
 var google = require('googleapis');
+var prettyjson = require('prettyjson');
 /*-------------------------------------------------*/
 
 // 1. Define service
-var service = 'images';
-var google_language_code = 'pt-BR';
-var bing_language_code = 'pt-BR';
+var service = 'youtube';
+var google_language_code = 'it';
+var bing_language_code = 'it-IT';
 var uniqueRecords = {};
 
 // 2. Read all records
@@ -208,19 +209,26 @@ var searchYoutube = function(i, db, collection){
         }else{
             // console.log(response);
             // console.log(JSON.stringify(response['items'][1]));
+            // console.log(prettyjson.render(response));
+            // console.log(response['items'].length);
 
-            for(var j = 0; j < response['items'].length; j++){
-                console.log(j);
-                if(response['items'][j]['id']['kind'] == 'youtube#video'){
-                    var record = {
-                        query: query,
-                        videoId: response['items'][j]['id']['videoId'],
-                        thumbnail: response['items'][j]['snippet']['thumbnails']['high']['url']
-                    }
-                    saveToMongoDB(record, i, db, collection);
-                    break;
-                }  
+            // We rather store youtube videos than playlists
+            //  Loop through the results until you find one
+            var j = 0;
+            while(j < response['items'].length - 1 &&
+                  response['items'][j]['id']['kind'] != 'youtube#video'){
+                  j++;
+                  console.log('Trying result #' + j);
             }
+
+            // If the results were all playlists,
+            // the last one will be stored anyway
+            var record = {
+                query: query,
+                videoId: response['items'][j]['id']['videoId'],
+                thumbnail: response['items'][j]['snippet']['thumbnails']['high']['url']
+            }
+            saveToMongoDB(record, i, db, collection);
         }
     });
 }

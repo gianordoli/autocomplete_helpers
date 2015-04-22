@@ -1,4 +1,4 @@
-country	isa
+country	usa
 aliexpress	aliexpress
 americanas	americanas
 azul	azul

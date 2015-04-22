@@ -1,0 +1,261 @@
+country	isa
+amazon	amazon
+ameli	ameli
+allocine	allocine
+air france	air france
+asos	asos
+annuaire	annuaire
+actualités	actualités
+auchan	aliexpress
+aliexpress	auchan
+apb	avito
+bon coin	bon coin
+boulanger	boulanger
+blablacar	blablacar
+but	but
+bnp	bnp
+brico depot	badoo
+badoo	brico depot
+bouygues	bouygues
+banque postale	banque postale
+boursorama	boursorama
+cdiscount	cdiscount
+caf	caf
+conforama	conforama
+castorama	castorama
+credit mutuel	credit mutuel
+credit agricole	credit agricole
+carrefour	carrefour
+charlie hebdo	clavier arabe
+cacaoweb	charlie hebdo
+cic	cacaoweb
+decathlon	decathlon
+darty	darty
+deezer	deezer
+dailymotion	dailymotion
+dictionnaire	dictionnaire
+dropbox	dropbox
+dieudonné	dieudonné
+disneyland	dofus
+dofus	desjardins
+d8	disneyland
+ebay	ebay
+easyjet	easyjet
+euromillion	eurosport
+eurosport	euromillion
+electro depot	electro depot
+edf	edf
+ecole directe	equipe
+equipe	ecole directe
+etam	etam
+europe 1	expedia
+facebook	facebook
+free	free
+fnac	fnac
+fdj	friv
+france 2	fdj
+france inter	france 2
+full stream	full stream
+fly	france inter
+france 3	fly
+film	film
+google	google
+gmail	gmail
+google traduction	google traduction
+google map	google map
+google image	google translate
+gifi	google image
+groupon	google earth
+google earth	groupon
+google translate	gifi
+go sport	goo
+hotmail	hotmail
+h\u0026m	hespress
+horoscope	h\u0026m
+h et m	horoscope
+hollister	h et m
+hsbc	hibapress
+hespress	hollister
+hop	hihi2
+happy wheels	harry potter
+histoire d\u0027or	happy wheels
+ikea	ikea
+impots	instagram
+instagram	impots
+itineraire	itineraire
+intersport	intersport
+indeed	indeed
+infogreffe	itunes
+itunes	icloud
+icloud	immoweb
+intermarché	infogreffe
+jeux	jeux
+jeux video	jeux gratuit
+jules	jeux video
+jennyfer	jules
+jeux gratuit	jennyfer
+jamie dornan	jamie dornan
+justfab	java
+java	justin bieber
+jouet club	justfab
+jeannette bougrab	jul
+kayak	kooora
+kiabi	kijiji
+kim kardashian	kayak
+keno	kiabi
+kiko	kim kardashian
+kooora	kapaza
+kingsman	kizi
+koreus	katy perry
+katy perry	keno
+kfc	kiko
+le bon coin	le bon coin
+la redoute	la redoute
+leroy merlin	leroy merlin
+le monde	le monde
+loto	loto
+la centrale	linkedin
+lcl	la centrale
+laposte	lcl
+lequipe	lequipe
+leclerc drive	laposte
+mappy	mappy
+meteo france	meteo france
+maps	maps
+marmiton	msn
+msn	marmiton
+michelin	michelin
+m6 replay	m6 replay
+meteociel	minecraft
+minecraft	meetic
+meetic	meteo paris
+netflix	netflix
+norauto	norauto
+nrj	nrj
+nabilla	nabilla
+numericable	nike
+nike	numericable
+nrj12	nrj12
+naf naf	nicki minaj
+new look	nespresso
+nespresso	new look
+orange	outlook
+outlook	orange
+oscaro	oscaro
+ouest france	ouedkniss
+onisep	ouest france
+orchestra	onisep
+ouigo	orchestra
+opodo	opodo
+om	ouigo
+open office	om
+programme tv	programme tv
+pages jaunes	pages jaunes
+pole emploi	pole emploi
+pages blanches	pages blanches
+psg barca	papystreaming
+papystreaming	paypal
+portail orange	portail orange
+paypal	priceminister
+priceminister	pinterest
+patrice dominguez	pmu
+quick	quick
+quiche lorraine	quiche lorraine
+qwant	qatar
+qatar	quenel+
+qapa	qapa
+quenel+	que choisir
+que choisir	quiche
+quaresma	quebec
+quinte	quinte
+quiche	que faire
+reverso	reverso
+ratp	ratp
+ryanair	ryanair
+rue du commerce	richard anthony
+rtl	rue du commerce
+rmc	rtl
+rugbyrama	rihanna
+recette crepe	real madrid
+rihanna	rmc
+rojadirecta	recette crepe
+sncf	sncf
+sfr	sfr
+sign in	skype
+skype	sign in
+sephora	sephora
+societe generale	societe generale
+se loger	se loger
+sfr mail	sfr mail
+scolinfo	scolinfo
+sarenza	sarenza
+traduction	traduction
+twitter	twitter
+traducteur	traducteur
+tf1	translate
+translate	tf1
+tripadvisor	tripadvisor
+transilien	transilien
+tati	tati
+top chef	the voice
+the voice	tubidy
+utorrent	utorrent
+urssaf	undiz
+undiz	urssaf
+ugc	ugc
+ubaldi	ubaldi
+ups	ups
+uber	utube
+uniqlo	uber
+utube	urban outfitters
+urban outfitters	ukraine
+vente privee	vente privee
+viamichelin	viamichelin
+vivastreet	vivastreet
+voyages sncf	voyages sncf
+viadeo	viadeo
+voila mail	vlc
+vacances scolaires	voila mail
+vdm	vdm
+vlc	vacances scolaires
+violetta	violetta
+wikipedia	wikipedia
+wordreference	wordreference
+wetransfer	wetransfer
+w9 replay	w9 replay
+wannonce	walmart
+winrar	whatsapp
+whiplash	winrar
+wawa mania	wannonce
+wish	whiplash
+wiko	wish
+xe	xe
+xbox	x
+xbox live	xbox
+xbox one	xavier dolan
+xavier dolan	xbox live
+x men	xbox one
+xl airways	xiaomi
+x	xbmc
+xiaomi	x men
+xperia z3	xscores
+youtube	youtube
+yahoo	yahoo
+youtube mp3	youtube mp3
+yves rocher	y8
+yahoo mail	yves rocher
+yamaha	yahoo mail
+youtube mp4	youtube mp4
+youwatch	yamaha
+youzik	youwatch
+yves saint laurent	youzik
+zalando	zalando
+zara	zara
+zimbra	zimbra
+zazie	zazie
+zara home	zara home
+zemmour	zemmour
+zap de spion	zap de spion
+zaz	zaz
+zlatan	zeturf
+zooplus	zlatan
