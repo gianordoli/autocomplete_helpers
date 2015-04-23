@@ -9,7 +9,7 @@ var prettyjson = require('prettyjson');
 /*-------------------------------------------------*/
 
 // 1. Define service
-var service = 'youtube';
+var service = 'images';
 var google_language_code = 'en';
 var bing_language_code = 'en-US';
 var uniqueRecords = {};
@@ -62,8 +62,12 @@ function filterUniqueRecords(originalRecords, db){
 
 // 4. Search for records already stored in the db
 function checkAlreadySaved(db){
-        
-    var collection = db.collection(service);
+    
+    if(service == 'youtube'){
+        var collection = db.collection(service);    
+    }else{
+        var collection = db.collection('images_2');    
+    }
 
     collection.find({}).toArray(function(err, results) {
         // console.dir(results);
@@ -105,87 +109,55 @@ function checkAlreadySaved(db){
 
 /*-------------------- IMAGES --------------------*/
 // 5A. Search Images
- 
+  
 var searchImages = function(i, db, collection){
 
-    var query = uniqueRecords[i]['query'];
-    while(query.indexOf(' ') > -1){
-        query = query.replace(' ', '+') 
-    }
-    var market = bing_language_code;
-    var adult = 'Off';
-    var AppId = 'cZOFS5HD5kC6Mwq+VgLuv96ta9qU7hhRTrw2YS8R51k';
-    var encodedAppKey = new Buffer(AppId).toString('base64');
+    // var query = uniqueRecords[i]['query'];
+    var query = 'isis';
+    console.log('Called searchImages for ' + query + ', ' + uniqueRecords[i]['language_code']);
 
-    // console.log('Called searchImages for ' + query);
+    var customsearch = google.customsearch('v1');
+    var API_KEY = 'AIzaSyAV1--iOaKX_D3tYMdz-sCOI6LafJfek3o';
+    var CX = '009093787028265469982:75wos-7sdjk';
 
-    var requestStr = 'https://user:' + AppId + '@api.datamarket.azure.com/Bing/Search/Image?'
-        
-            // Common request fields (required)
-            + 'Query=%27' + query + '%27'            
-            + '&Market=%27' + market + '%27'
-            + '&Adult=%27' + adult + '%27'
-            + '&$top=10'
-            + '&$format=JSON';
-
-
-    request(requestStr, function(error, response, body){
-        // console.log(body);
-        var body = JSON.parse(body);
-        var results = body['d']['results'];
-        // console.log(results);
-
-        var maxDimension = 0;
-        var index = 0;
-        for(var j = 0; j < results.length; j++){
-            if(results[j]['Width'] * results[j]['Height'] > maxDimension &&
-               results[j]['MediaUrl'].indexOf('wp-content') < 0){
-                maxDimension = results[j]['Width'] * results[j]['Height'];
-                index = j;
-            }
+    customsearch.cse.list({
+            cx: CX,
+            q: query,
+            auth: API_KEY,
+            searchType: 'image',
+            imgSize: 'medium',
+            hl: uniqueRecords[i]['language_code'],
+            filter: 1       // Turns on duplicate content filter
+            // relevanceLanguage: uniqueRecords[i]['language_code']
+        }, function(err, resp) {
+        if (err) {
+            console.log('An error occured', err);
+            return;
         }
-        // console.log(results[index]);
+        // Got the response from custom search
+        console.log('Result: ' + resp.searchInformation.formattedTotalResults);
+        if (resp.items && resp.items.length > 0) {
+            console.log(JSON.stringify(resp.items));
+            // console.log('First result name is ' + resp.items[0].title);
+        
+        var j = 0;
+        // console.log((j+1) + '/' + resp.items.length);
+        // // Skip wordpress results
+        // while(resp.items[j]['link'].indexOf('wp-content') > -1){
+        //     j++;
+        //     console.log((j+1) + '/' + resp.items.length);
+        // }
+        console.log('Select result #' + j);
         var record = {
             query: uniqueRecords[i]['query'],
-            url: results[index]['MediaUrl']
+            url: resp.items[j]['link']
         }
         console.log(record);
-        saveToMongoDB(record, i, db, collection);
-
+        // saveToMongoDB(record, i, db, collection);
+        }
     });
+
 }
-
-// SCRAPER
-// // console.log(link);
-// var searchImages = function(i, db, collection){
-
-//     var query = uniqueRecords[i]['query'];
-//     console.log('Called searchImages for ' + query);
-
-//     var baseUrl = 'https://www.google.com/search?site=imghp&tbm=isch&q=X';
-
-//     var link = baseUrl.replace('X', query);
-//     link += "&hl=" + uniqueRecords[i]['language_code'];
-//     while(link.indexOf(' ') > -1){
-//         link = link.replace(' ', '+') 
-//     }
-
-//     request(link, function(error, response, html){
-//         if(!error){
-//             var $ = cheerio.load(html);
-//             // var content = $('body').text();
-//             var results = $('img');
-//             var imgSrc = $(results[1]).attr('src');
-//             // console.log(imgSrc);
-//             var record = {
-//                 query: query,
-//                 thumbnail: imgSrc
-//             }
-//             saveToMongoDB(record, i, db, collection);
-//         }
-//     });
-// }
-	
 
 
 /*-------------------- YOUTUBE -------------------*/
