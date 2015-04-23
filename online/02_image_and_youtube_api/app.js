@@ -10,8 +10,8 @@ var prettyjson = require('prettyjson');
 
 // 1. Define service
 var service = 'youtube';
-var google_language_code = 'it';
-var bing_language_code = 'it-IT';
+var google_language_code = 'en';
+var bing_language_code = 'en-US';
 var uniqueRecords = {};
 
 // 2. Read all records
@@ -242,7 +242,8 @@ function saveToMongoDB(record, i, db, collection){
         if(err){
             throw err;
         }else{
-            console.log('Obj succesfully saved to DB.');    
+            console.log('Obj succesfully saved to DB.');
+            console.log(i + '/' + uniqueRecords.length);
             // Next iteration
             if(i < uniqueRecords.length - 1){
                 console.log('Calling next iteration.');
