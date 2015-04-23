@@ -10,8 +10,7 @@ var prettyjson = require('prettyjson');
 
 // 1. Define service
 var service = 'images';
-var google_language_code = 'en';
-var bing_language_code = 'en-US';
+var google_language_code = 'pt-BR';
 var uniqueRecords = {};
 
 // 2. Read all records
@@ -112,13 +111,30 @@ function checkAlreadySaved(db){
   
 var searchImages = function(i, db, collection){
 
-    // var query = uniqueRecords[i]['query'];
-    var query = 'isis';
+    var exceptions = ['blogspot', 'ytimg'];
+
+    var query = uniqueRecords[i]['query'];
     console.log('Called searchImages for ' + query + ', ' + uniqueRecords[i]['language_code']);
 
     var customsearch = google.customsearch('v1');
-    var API_KEY = 'AIzaSyAV1--iOaKX_D3tYMdz-sCOI6LafJfek3o';
-    var CX = '009093787028265469982:75wos-7sdjk';
+
+    // var CX = '009093787028265469982:75wos-7sdjk';    // google
+    // var CX = '009093787028265469982:47qrsohgctc';    // google+
+    var CX = '009093787028265469982:7xuqjmbnfu0';    // google++
+
+    // var API_KEY = 'AIzaSyBtYYmAh0x8o8PthznzyCnhQRYJS5d0nx8'; // images    
+    // var API_KEY = 'AIzaSyAV1--iOaKX_D3tYMdz-sCOI6LafJfek3o'; // custom search
+    // var API_KEY = 'AIzaSyC80HCh8DKlu9x7sHjOV5nsAbC1IEVP7OE'; // images 2
+    var API_KEY = 'AIzaSyBCoxd-Rx9R4xvpQE1clX6OcQuUxK8uiYc';    // My Project
+
+    /*-------------------- DEBUG --------------------*/
+    // var resp = {};
+    // resp['items'] = [];
+    // resp.items.push({'link': 'http://www.i.ytimg.com.com'});    
+    // resp.items.push({'link': 'http://www.blogspot.com'});
+    // resp.items.push({'link': 'http://www.laura.com'});
+    // console.log(resp.items);
+    /*-----------------------------------------------*/
 
     customsearch.cse.list({
             cx: CX,
@@ -136,24 +152,35 @@ var searchImages = function(i, db, collection){
         }
         // Got the response from custom search
         console.log('Result: ' + resp.searchInformation.formattedTotalResults);
+        
         if (resp.items && resp.items.length > 0) {
-            console.log(JSON.stringify(resp.items));
+            // console.log(JSON.stringify(resp.items));
             // console.log('First result name is ' + resp.items[0].title);
         
-        var j = 0;
-        // console.log((j+1) + '/' + resp.items.length);
-        // // Skip wordpress results
-        // while(resp.items[j]['link'].indexOf('wp-content') > -1){
-        //     j++;
-        //     console.log((j+1) + '/' + resp.items.length);
-        // }
-        console.log('Select result #' + j);
-        var record = {
-            query: uniqueRecords[i]['query'],
-            url: resp.items[j]['link']
-        }
-        console.log(record);
-        // saveToMongoDB(record, i, db, collection);
+            var j = 0;
+            var isBlocked = true;
+            while(isBlocked && j < resp.items.length - 1){
+                // Loop through all exceptions
+                for(var k = 0; k < exceptions.length; k++){
+                    console.log('Checking exception ' + (k+1) + '/' + exceptions.length);
+                    if(resp.items[j]['link'].indexOf(exceptions[k]) > -1){
+                        console.log('Found exception at ' + resp.items[j]['link']);
+                        isBlocked = true;
+                        j++;                    
+                        break;
+                    }else{
+                        isBlocked = false;
+                    }
+                }
+            }
+
+            console.log('Select result #' + j);
+            var record = {
+                query: uniqueRecords[i]['query'],
+                url: resp.items[j]['link']
+            }
+            console.log(record);
+            saveToMongoDB(record, i, db, collection);
         }
     });
 
