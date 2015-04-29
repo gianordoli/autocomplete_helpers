@@ -1,0 +1,261 @@
+country	usa
+areena	areena
+ampparit	ampparit
+aamulehti	aamulehti
+anttila	anttila
+alko	alko
+asko	asko
+aurinkomatkat	aurinkomatkat
+autotalli	autotalli
+aktia	aktia
+avk	avk
+biltema	biltema
+bauhaus	bauhaus
+blogger	blogger
+boozt	boozt
+bikbok	bikbok
+birdman	blocket
+bbc	birdman
+bubbleroom	bbc
+blocket	bubbleroom
+bmw	bmw
+cdon	cdon
+citymarket	citymarket
+cubus	cubus
+csgolounge	csgolounge
+chrome	chrome
+ccleaner	ccleaner
+chris kyle	chris kyle
+cv	cv
+cheek	cheek
+clash of clans	clash of clans
+dna	dna
+dropbox	dropbox
+drive	drive
+danske bank	danske bank
+diacor	diacor
+detur	detur
+dermosil	dermosil
+doc martin	doc martin
+demi	demi
+daily mail	daily mail
+etuovi	etuovi
+ebay	ebay
+eniro	eniro
+ellos	ellos
+elisa	elisa
+expert	expert
+ebookers	ebookers
+elisa viihde	elisa viihde
+emmerdale	emmerdale
+edis tatli	emp
+facebook	facebook
+foreca	foreca
+finnkino	finnkino
+fonecta	fonecta
+finnair	finnair
+fb	fb
+feissarimokat	feissarimokat
+finnmatkat	finnmatkat
+fifty shades of grey	fifty shades of grey
+fitfarm	fitfarm
+gmail	gmail
+google	google
+google maps	google maps
+google kääntäjä	google kääntäjä
+gigantti	gigantti
+google translate	google translate
+google drive	google drive
+google kuvahaku	google kuvahaku
+gina tricot	gina tricot
+game of thrones	game of thrones
+hotmail	hotmail
+huutonet	huutonet
+hs	hs
+hsl	hsl
+hobby hall	hobby hall
+hm	hm
+hdfin	hdfin
+helmet	helmet
+hong kong	halvat lennot
+halvat lennot	hong kong
+iltalehti	iltalehti
+ilta sanomat	ilta sanomat
+ikea	ikea
+instagram	instagram
+intersport	intersport
+imdb	imdb
+if	if
+iltapulu	iltapulu
+isku	ilkka
+ilkka	isku
+jokakoti	jokakoti
+jysk	jysk
+jatkoaika	jatkoaika
+jotex	jotex
+jokerit	jokerit
+jimm\u0027s	jimm\u0027s
+jippii	jippii
+jhl	jhl
+juustokakku	juhannus 2015
+juhannus 2015	juustokakku
+kääntäjä	kääntäjä
+katsomo	katsomo
+kela	kela
+kuvahaku	kuvahaku
+kauppalehti	kauppalehti
+kaleva	kaleva
+kartta	kartta
+kärkkäinen	kärkkäinen
+kinuskikissa	kinuskikissa
+kodin1	kodin1
+luukku	luukku
+liiga	liiga
+lotto	lotto
+lidl	lidl
+lataa youtube	lähitapiola
+lähitapiola	lataa youtube
+lippupalvelu	lippupalvelu
+linkedin	linkedin
+lindex	lindex
+levi	levi
+maps	maps
+matkahuolto	matkahuolto
+mol	mol
+motonet	motonet
+mtv3	mtv3
+minecraft	minecraft
+mehiläinen	mehiläinen
+masku	masku
+miniclip	miniclip
+momondo	momondo
+nettiauto	nettiauto
+nordea	nordea
+netflix	netflix
+nettimoto	nettimoto
+norwegian	norwegian
+netposti	netposti
+nettikone	nettikone
+nettivaraosa	nettivaraosa
+nopeustesti	nopeustesti
+nettivene	nettivene
+op	op
+oikotie	oikotie
+onnibus	onnibus
+outlook	outlook
+opintopolku	opintopolku
+omakanta	omakanta
+onedrive	onedrive
+omegle	omegle
+office 365	office 365
+oma elisa	oma elisa
+posti	posti
+prisma	prisma
+pelikone	pelikone
+pinterest	pinterest
+popcorn time	popcorn time
+poliisi	poliisi
+paypal	paypal
+puuilo	puuilo
+pannukakku	pannukakku
+paf	paf
+quizlet	quizlet
+qruiser	qruiser
+qstock	qstock
+queen	queen
+quotes	quotes
+qatar	qatar
+qr koodi	qr koodi
+quorn	quorn
+quesadilla	quinoa
+quinoa	quesadilla
+ruutu	ruutu
+reittiopas	reittiopas
+reittihaku	reittihaku
+rantapallo	rantapallo
+riemurasia	riemurasia
+ryanair	ryanair
+radio rock	radio rock
+roope salminen	roope salminen
+radio nova	radio nova
+robin	robin
+sanakirja	sanakirja
+sää	sää
+suomi24	suomi24
+saunalahti	saunalahti
+s-pankki	s-pankki
+sonera	sonera
+stockmann	stockmann
+speedtest	speedtest
+stadium	stadium
+suomipop	suomipop
+tori	tori
+telkku	telkku
+translate	translate
+tilannehuone	tilannehuone
+tjäreborg	tjäreborg
+terveystalo	terveystalo
+tokmanni	tokmanni
+twitter	twitter
+trafi	trafi
+twitch	twitch
+uutiset	uutiset
+uusi päivä	unibet
+unibet	uusi päivä
+uunilohi	uunilohi
+umk	umk
+utorrent	utorrent
+uusi suomi	uusi suomi
+ursa	ursa
+uunijuurekset	uunijuurekset
+unisport	unisport
+veikkaus	veikkaus
+vr	vr
+verkkokauppa	verkkokauppa
+vaalikone	vaalikone
+viking line	viking line
+vuokraovi	vuokraovi
+vero	vero
+viaplay	vappu
+vappu	viaplay
+varusteleka	varusteleka
+wikipedia	wikipedia
+wilma	wilma
+whatsapp	whatsapp
+wilma vantaa	wilma vantaa
+wilma espoo	wilma espoo
+webmail	webmail
+weekend festival	windows 10
+windows 10	weekend festival
+wippies	wippies
+weboodi	weboodi
+xxl	xxl
+xbox	xbox
+xracing	xracing
+xbox one	xbox one
+xenia\u0027s day	xenia\u0027s day
+xanor	xbox live
+xbox live	xanor
+xvm	xvm
+xiaomi	xiaomi
+xamk moodle	xe
+youtube	youtube
+yle areena	yle areena
+yt	yt
+yle	yle
+ylilauta	ylilauta
+ytj	ytj
+ytk	ytk
+ylex	ylex
+yle uutiset	yle uutiset
+yle vaalikone	yle vaalikone
+zalando	zalando
+zara	zara
+zooplus	zooplus
+zoovillage	zoovillage
+zazabella	zinzino
+zinzino	zazabella
+zlatan ibrahimovic	zlatan ibrahimovic
+zybez	zybez
+zeppelin	zeppelin
+zac efron	zac efron

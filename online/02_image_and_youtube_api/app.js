@@ -10,7 +10,7 @@ var prettyjson = require('prettyjson');
 
 // 1. Define service
 var service = 'images';
-var google_language_code = 'pt-BR';
+var google_language_code = 'tr';
 var uniqueRecords = {};
 
 // 2. Read all records
@@ -61,12 +61,8 @@ function filterUniqueRecords(originalRecords, db){
 
 // 4. Search for records already stored in the db
 function checkAlreadySaved(db){
-    
-    if(service == 'youtube'){
-        var collection = db.collection(service);    
-    }else{
-        var collection = db.collection('images_2');    
-    }
+
+    var collection = db.collection(service);
 
     collection.find({}).toArray(function(err, results) {
         // console.dir(results);
@@ -118,14 +114,17 @@ var searchImages = function(i, db, collection){
 
     var customsearch = google.customsearch('v1');
 
-    // var CX = '009093787028265469982:75wos-7sdjk';    // google
+    var CX = '009093787028265469982:75wos-7sdjk';    // google
     // var CX = '009093787028265469982:47qrsohgctc';    // google+
-    var CX = '009093787028265469982:7xuqjmbnfu0';    // google++
+    // var CX = '009093787028265469982:7xuqjmbnfu0';    // google++
 
-    // var API_KEY = 'AIzaSyBtYYmAh0x8o8PthznzyCnhQRYJS5d0nx8'; // images    
+    var API_KEY = 'AIzaSyBtYYmAh0x8o8PthznzyCnhQRYJS5d0nx8'; // images    
     // var API_KEY = 'AIzaSyAV1--iOaKX_D3tYMdz-sCOI6LafJfek3o'; // custom search
     // var API_KEY = 'AIzaSyC80HCh8DKlu9x7sHjOV5nsAbC1IEVP7OE'; // images 2
-    var API_KEY = 'AIzaSyBCoxd-Rx9R4xvpQE1clX6OcQuUxK8uiYc';    // My Project
+    // var API_KEY = 'AIzaSyBCoxd-Rx9R4xvpQE1clX6OcQuUxK8uiYc'; // My Project
+    // var API_KEY = 'AIzaSyB21SQBr7a2lJ-HQmHDr25pYrT_tKYfVqY'; // Images 3
+    // var API_KEY = 'AIzaSyCCSEOBYuxqIDGkCzYWu-onqLMpkQoFOUA'; // Images 4
+    // var API_KEY = 'AIzaSyBTUd10AwprTZdDDJF2vK1EcAKBTTdbaEE'; // Images 4    
 
     /*-------------------- DEBUG --------------------*/
     // var resp = {};
