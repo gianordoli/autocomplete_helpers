@@ -9,9 +9,8 @@ var prettyjson = require('prettyjson');
 /*-------------------------------------------------*/
 
 // 1. Define service
-var service = 'youtube';
-var google_language_code = 'en';
-var bing_language_code = 'en-US';
+var service = 'images';
+var google_language_code = 'tr';
 var uniqueRecords = {};
 
 // 2. Read all records
@@ -62,7 +61,7 @@ function filterUniqueRecords(originalRecords, db){
 
 // 4. Search for records already stored in the db
 function checkAlreadySaved(db){
-        
+
     var collection = db.collection(service);
 
     collection.find({}).toArray(function(err, results) {
@@ -105,87 +104,86 @@ function checkAlreadySaved(db){
 
 /*-------------------- IMAGES --------------------*/
 // 5A. Search Images
- 
+  
 var searchImages = function(i, db, collection){
 
+    var exceptions = ['blogspot', 'ytimg'];
+
     var query = uniqueRecords[i]['query'];
-    while(query.indexOf(' ') > -1){
-        query = query.replace(' ', '+') 
-    }
-    var market = bing_language_code;
-    var adult = 'Off';
-    var AppId = 'cZOFS5HD5kC6Mwq+VgLuv96ta9qU7hhRTrw2YS8R51k';
-    var encodedAppKey = new Buffer(AppId).toString('base64');
+    console.log('Called searchImages for ' + query + ', ' + uniqueRecords[i]['language_code']);
 
-    // console.log('Called searchImages for ' + query);
+    var customsearch = google.customsearch('v1');
 
-    var requestStr = 'https://user:' + AppId + '@api.datamarket.azure.com/Bing/Search/Image?'
+    var CX = '009093787028265469982:75wos-7sdjk';    // google
+    // var CX = '009093787028265469982:47qrsohgctc';    // google+
+    // var CX = '009093787028265469982:7xuqjmbnfu0';    // google++
+
+    var API_KEY = 'AIzaSyBtYYmAh0x8o8PthznzyCnhQRYJS5d0nx8'; // images    
+    // var API_KEY = 'AIzaSyAV1--iOaKX_D3tYMdz-sCOI6LafJfek3o'; // custom search
+    // var API_KEY = 'AIzaSyC80HCh8DKlu9x7sHjOV5nsAbC1IEVP7OE'; // images 2
+    // var API_KEY = 'AIzaSyBCoxd-Rx9R4xvpQE1clX6OcQuUxK8uiYc'; // My Project
+    // var API_KEY = 'AIzaSyB21SQBr7a2lJ-HQmHDr25pYrT_tKYfVqY'; // Images 3
+    // var API_KEY = 'AIzaSyCCSEOBYuxqIDGkCzYWu-onqLMpkQoFOUA'; // Images 4
+    // var API_KEY = 'AIzaSyBTUd10AwprTZdDDJF2vK1EcAKBTTdbaEE'; // Images 4    
+
+    /*-------------------- DEBUG --------------------*/
+    // var resp = {};
+    // resp['items'] = [];
+    // resp.items.push({'link': 'http://www.i.ytimg.com.com'});    
+    // resp.items.push({'link': 'http://www.blogspot.com'});
+    // resp.items.push({'link': 'http://www.laura.com'});
+    // console.log(resp.items);
+    /*-----------------------------------------------*/
+
+    customsearch.cse.list({
+            cx: CX,
+            q: query,
+            auth: API_KEY,
+            searchType: 'image',
+            imgSize: 'medium',
+            hl: uniqueRecords[i]['language_code'],
+            filter: 1       // Turns on duplicate content filter
+            // relevanceLanguage: uniqueRecords[i]['language_code']
+        }, function(err, resp) {
+        if (err) {
+            console.log('An error occured', err);
+            return;
+        }
+        // Got the response from custom search
+        console.log('Result: ' + resp.searchInformation.formattedTotalResults);
         
-            // Common request fields (required)
-            + 'Query=%27' + query + '%27'            
-            + '&Market=%27' + market + '%27'
-            + '&Adult=%27' + adult + '%27'
-            + '&$top=10'
-            + '&$format=JSON';
-
-
-    request(requestStr, function(error, response, body){
-        // console.log(body);
-        var body = JSON.parse(body);
-        var results = body['d']['results'];
-        // console.log(results);
-
-        var maxDimension = 0;
-        var index = 0;
-        for(var j = 0; j < results.length; j++){
-            if(results[j]['Width'] * results[j]['Height'] > maxDimension &&
-               results[j]['MediaUrl'].indexOf('wp-content') < 0){
-                maxDimension = results[j]['Width'] * results[j]['Height'];
-                index = j;
+        if (resp.items && resp.items.length > 0) {
+            // console.log(JSON.stringify(resp.items));
+            // console.log('First result name is ' + resp.items[0].title);
+        
+            var j = 0;
+            var isBlocked = true;
+            while(isBlocked && j < resp.items.length - 1){
+                // Loop through all exceptions
+                for(var k = 0; k < exceptions.length; k++){
+                    console.log('Checking exception ' + (k+1) + '/' + exceptions.length);
+                    if(resp.items[j]['link'].indexOf(exceptions[k]) > -1){
+                        console.log('Found exception at ' + resp.items[j]['link']);
+                        isBlocked = true;
+                        j++;                    
+                        break;
+                    }else{
+                        isBlocked = false;
+                    }
+                }
             }
-        }
-        // console.log(results[index]);
-        var record = {
-            query: uniqueRecords[i]['query'],
-            url: results[index]['MediaUrl']
-        }
-        console.log(record);
-        saveToMongoDB(record, i, db, collection);
 
+            console.log('Select result #' + j);
+            var record = {
+                query: uniqueRecords[i]['query'],
+                url: resp.items[j]['link']
+            }
+            console.log(record);
+            saveToMongoDB(record, i, db, collection);
+        }
     });
+
 }
-
-// SCRAPER
-// // console.log(link);
-// var searchImages = function(i, db, collection){
-
-//     var query = uniqueRecords[i]['query'];
-//     console.log('Called searchImages for ' + query);
-
-//     var baseUrl = 'https://www.google.com/search?site=imghp&tbm=isch&q=X';
-
-//     var link = baseUrl.replace('X', query);
-//     link += "&hl=" + uniqueRecords[i]['language_code'];
-//     while(link.indexOf(' ') > -1){
-//         link = link.replace(' ', '+') 
-//     }
-
-//     request(link, function(error, response, html){
-//         if(!error){
-//             var $ = cheerio.load(html);
-//             // var content = $('body').text();
-//             var results = $('img');
-//             var imgSrc = $(results[1]).attr('src');
-//             // console.log(imgSrc);
-//             var record = {
-//                 query: query,
-//                 thumbnail: imgSrc
-//             }
-//             saveToMongoDB(record, i, db, collection);
-//         }
-//     });
-// }
-	
 
 
 /*-------------------- YOUTUBE -------------------*/

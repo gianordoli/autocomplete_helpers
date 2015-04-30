@@ -1,4 +1,4 @@
-country	isa
+country	usa
 amazon	amazon
 ameli	ameli
 allocine	allocine
