@@ -2,7 +2,7 @@ StringList country = new StringList();
 StringList usa = new StringList();
 int differences = 0;
 void setup(){
-  String[] data = loadStrings("pt_br.txt");
+  String[] data = loadStrings("es.txt");
   for(int i = 1; i < data.length; i++){
     String[] row = split(data[i], '\t');
     country.append(row[0]);

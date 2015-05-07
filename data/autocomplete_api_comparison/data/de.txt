@@ -1,0 +1,261 @@
+country	usa
+amazon	amazon
+aldi	aldi
+autoscout	autoscout
+ard	ard
+air berlin	air berlin
+aldi talk	aldi talk
+aldi nord	aldi nord
+apple	apple
+asos	asos
+aol	aol
+bild	bild
+bundesliga	bundesliga
+bahnstreik	bahnstreik
+bahn	bahn
+bundesliga tabelle	blick
+bonprix	bundesliga tabelle
+burning series	bonprix
+bvb	burning series
+bvg	bvb
+bmi rechner	bauhaus
+chefkoch	chefkoch
+commerzbank	champions league
+champions league	c\u0026a
+c\u0026a	commerzbank
+cinemaxx	chip
+chip	cinemaxx
+clipfish	clipfish
+comdirect	comdirect
+check24	ccleaner
+ccleaner	check24
+das örtliche	das örtliche
+deutsche bahn	deutsche bahn
+dhl	dhl
+dsds	dsds
+dropbox	dropbox
+duden	duden
+deutsche bank	deutsche bank
+dänisches bettenlager	dänisches bettenlager
+dm	dm
+dschungelcamp	dschungelcamp
+ebay	ebay
+ebay kleinanzeige	ebay kleinanzeige
+esprit	easyjet
+expedia	esprit
+easyjet	expedia
+eventim	elkin soto
+elster	eventim
+elkin soto	elster
+edeka	end of watch
+express	europapark
+facebook	facebook
+freenet	freenet
+fifty shades of grey	fifty shades of grey
+focus	face
+face	focus
+firefox	firefox
+feiertage 2015	feiertage 2015
+faz	flixbus
+fc bayern	faz
+flixbus	fc bayern
+google	google
+gmx	gmx
+google maps	google maps
+google übersetzer	gmail
+gmail	google übersetzer
+germanwings	germanwings
+google earth	google earth
+gdl	game of thrones
+game of thrones	gdl
+griechenland	griechenland
+hotmail	hotmail
+h\u0026m	h\u0026m
+hermes	hermes
+hornbach	hornbach
+hvv	helene fischer
+helene fischer	herold
+honig im kopf	hvv
+hamburg	honig im kopf
+hsv	hsv
+happy wheels	hamburg
+ikea	ikea
+iban rechner	instagram
+instagram	iban rechner
+immonet	immonet
+immobilien scout	immobilien scout
+idealo	idealo
+ing diba	ing diba
+immowelt	immowelt
+itunes	itunes
+indeed	indeed
+jobbörse	jobbörse
+jappy	java
+jochen schweizer	jochen schweizer
+java	jappy
+jennifer lawrence	jennifer lawrence
+john wick	john wick
+jamie dornan	jamie dornan
+jupiter ascending	jupiter ascending
+justin bieber	justin bieber
+joeys	johnny depp
+kicker	kicker
+kalender 2015	kalender 2015
+kleiderkreisel	kinokiste
+kabel deutschland	kleiderkreisel
+kino	kabel deutschland
+kate baby	kino
+kleinanzeigen	kate baby
+kalaydo	krone
+kinokiste	kika
+köln	kleinanzeigen
+leo	leo
+lidl	lidl
+lufthansa	lufthansa
+lotto	lotto
+lottozahlen	lottozahlen
+league of legends	league of legends
+lieferheld	linkedin
+lovoo	lovoo
+linguee	lieferheld
+linkedin	linguee
+maps	maps
+mobile	mobile
+media markt	media markt
+minecraft	minecraft
+mmoga	msn
+msn	mmoga
+mayweather	mayweather
+mc donalds	movie2k
+muttertag 2015	muttertag 2015
+muttertag	muttertag
+ntv	netflix
+netflix	news
+news	ntv
+nachrichten	nachrichten
+netto	newtopia
+newtopia	netto
+n24	n24
+norma	nike
+ndr	norma
+nike	ndr
+otto	otto
+ostern 2015	ostern 2015
+o2	orf
+outlook	outlook
+opodo	o2
+obi	opodo
+open office	obi
+opel	open office
+onvista	opel
+ostern	one piece
+paypal	paypal
+postbank	postbank
+payback	pegida
+pegida	payback
+pro7	pro7
+poco	pfingsten 2015
+pfingsten 2015	poco
+pinterest	pinterest
+penny	penny
+primark	post
+qvc	qvc
+quoka	quoka
+quinoa	quinoa
+quizduell	quizduell
+quiche	queen
+queen	quiche
+qr code	queen elizabeth
+queen elizabeth	quizlet
+quedlinburg	qr code
+qatar	qatarr
+routenplaner	routenplaner
+rtl now	rtl now
+rtl	rtl
+ryanair	ryanair
+rossmann	ricardo
+real	rossmann
+rmv	rechner
+rechner	real
+roller	rtl2
+rtl2	raiffeisen
+saturn	saturn
+spiegel	spiegel
+speedtest	speedtest
+sport1	skype
+skype	sport1
+sky go	sky go
+sky	samsung
+samsung	steam
+steam	soundcloud
+soundcloud	sky
+tchibo	tchibo
+telefonbuch	telefonbuch
+t-online	translator
+translator	t-online
+tv programm	tv programm
+trivago	trivago
+tagesschau	tagesschau
+twitch	twitter
+telekom	twitch
+twitter	telekom
+urlaubspiraten	urlaubspiraten
+urlaubsguru	urlaubsguru
+uhrzeit	uhrzeit
+unitymedia	unitymedia
+ukraine	ukraine
+ups	ups
+urban outfitters	urban outfitters
+usa	usa
+urlaub	udo jürgens
+udo jürgens	uci
+vodafone	vodafone
+vw	vw
+vox now	vox now
+vrr	vox
+vox	vrr
+vfb stuttgart	vfb stuttgart
+vfl wolfsburg	vfl wolfsburg
+vvs	violetta
+violetta	vlc
+vlc	vvs
+wetter	wetter
+wikipedia	wikipedia
+währungsrechner	willhaben
+whatsapp	währungsrechner
+wetteronline	whatsapp
+wetter berlin	wetteronline
+weltbild	weltbild
+windows 10	wetter berlin
+www google	www google
+wg gesucht	windows 10
+xing	xing
+xbox one	xbox one
+xenos	xenos
+xavier naidoo	xiaomi
+xiaomi	xavier naidoo
+xbox	xbox
+xatar	xatar
+xbox live	xbox live
+xampp	xampp
+xbmc	xbmc
+youtube	youtube
+yahoo	yahoo
+yabeat	yabeat
+younow	younow
+youtube to mp3	youtube to mp3
+yamaha	yamaha
+yandex	y8
+yo	yo
+y8	yandex
+yokebe	yves rocher
+zalando	zalando
+zdf	zdf
+zara	zara
+zeitumstellung 2015	zeitumstellung 2015
+zeit	zeit
+zdf live	zdf live
+zooplus	zooplus
+zeitumstellung	zeitumstellung
+zara home	zattoo
+zalando gutschein	zara home

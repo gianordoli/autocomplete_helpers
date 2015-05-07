@@ -8,9 +8,9 @@ var loadedCountries, loadedServices;
 
 var init = function(){
 
-	getDateRangeDB(function(range){
-		console.log('Got date range.');
-		console.log(range);	// Full db range
+	// getDateRangeDB(function(range){
+	// 	console.log('Got date range.');
+	// 	console.log(range);	// Full db range
 
 		var service = 'web';
 
@@ -18,7 +18,7 @@ var init = function(){
 			console.log('Filtered domains:');
 			console.log(domains);
 			var params = {
-				'date': {'$gt': new Date(range[0]), '$lte': new Date(range[1])},
+				// 'date': {'$gt': new Date(range[0]), '$lte': new Date(range[1])},
 				'service': service,
 				'domain': {'$in': domains}
 			}
@@ -65,7 +65,7 @@ var init = function(){
 
 			});	
 		});
-	});
+	// });
 }
 
 var getLanguageName = function(languageCode){

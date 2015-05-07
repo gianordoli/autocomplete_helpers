@@ -1,0 +1,261 @@
+country	usa
+as	amazon
+amazon	as
+aliexpress	ask
+aemet	aptoide
+abc	afip
+antena 3	aliexpress
+agencia tributaria	anses
+alsa	abc
+aptoide	aemet
+atrapalo	avianca
+bbva	banesco
+bankia	bbva
+banco santander	banco de venezuela
+bershka	banco estado
+badoo	badoo
+banco popular	bancolombia
+blanco	bankia
+bankinter	banco provincial
+booking	bod
+bonoloto	banco santander
+carrefour	convertidor
+comuniazo	computrabajo
+correos	cinepolis
+comunio	curp
+cuatro	clarin
+cajamar	cuevana
+caixa	claro
+corte ingles	cinemex
+convertidor youtube	cinemark
+canal plus	carrefour
+decathlon	dropbox
+dropbox	diccionario
+dia de la madre	despegar
+dgt	decathlon
+diccionario	dia de la madre
+drive	dubsmash
+diario vasco	dragon ball z
+dakota johnson	descargar whatsapp
+diez minutos	directv
+diario de navarra	descargar musica
+el mundo	ebay
+el pais	el pais
+ebay	el tiempo
+el corte ingles	el mundo
+el tiempo	el corte ingles
+elitetorrent	espn
+euromillones	el universal
+el confidencial	el comercio
+el correo	elitetorrent
+edreams	edmodo
+facebook	facebook
+fotocasa	friv
+friv	fb
+feliz dia de la madre	falabella
+fnac	frases de amor
+fc barcelona	fotocasa
+filmaffinity	frozen
+fernando alonso	feliz dia de la madre
+frozen	feriados 2015
+formula 1	feliz dia del trabajador
+gmail	google
+google	gmail
+google maps	google maps
+gran hermano vip	google traductor
+google traductor	google earth
+game	google translate
+groupon	google play
+google drive	groupon
+groupalia	google academico
+google translate	hotmail
+hotmail	hola
+hola	horoscopo
+hm	hsbc
+hipercor	hot
+horoscopo	home depot
+hacienda	homecenter
+hoy	hola soy german
+heraldo de aragon	horoscopo chino
+horarios renfe	habbo
+habitaclia	instagram
+ikea	infobae
+infojobs	infonavit
+instagram	imagenes de amor
+idealista	imagenes
+ing	ikea
+iberia	iniciar sesion
+interviu	infojobs
+ibercaja	interjet
+iberdrola	iess
+infoempleo	juegos
+jazztel	juegos de vestir
+juegos	java
+java	justin bieber
+jamie dornan	jazztel
+just eat	juegos de carros
+junta de andalucia	juegos friv
+juego de tronos	jamie dornan
+justin bieber	juegos de motos
+juguettos	juegos de mario
+jdownloader	kizi
+kayak	katy perry
+kutxabank	kim kardashian
+kiabi	kayak
+kim kardashian	kutxabank
+km77	keepvid
+katy perry	kendall jenner
+kizi	kristen stewart
+kinepolis	kia
+kia	kylie jenner
+kiss fm	la caixa
+la caixa	linkedin
+leroy merlin	lan
+linkedin	la nacion
+lidl	loteria nacional
+liga bbva	liverpool
+la vanguardia	lun
+la primitiva	leroy merlin
+la razon	liga bbva
+libertad digital	la pelea del siglo
+la voz de galicia	mercadolibre
+marca	marca
+milanuncios	maps
+maps	movistar
+movistar	milanuncios
+mitele	msn
+msn	minecraft
+mundo deportivo	mayweather
+mercadona	mercantil
+mayweather	musica
+massimo dutti	netflix
+noticias	noticias
+new balance	nba
+nike	noticias 24
+nba	nicky jam
+nico abad	nike
+no mas 900	nicki minaj
+norauto	nissan
+nissan	netshoes
+niumba	nextel
+newpct1	outlook
+outlook	olx
+once	ole
+orange	occ
+ono	orange
+olvido hormigos	once
+onlae	ono
+oysho	one direction
+onda cero	office 365
+openbank	onedrive
+oscaro	pinterest
+pordede	pelis24
+paypal	play store
+primitiva	paypal
+pelis24	provincial
+pull and bear	peliculas
+privalia	pacquiao
+pinterest	personal
+publico	poemas de amor
+primark	pordede
+pepephone	quiniela
+quiniela	quiente
+quien quiere casarse con mi hijo	quien gano la pelea del siglo
+que me dices	quini 6
+quiente	que es un ensayo
+quinielista	quien quiere casarse con mi hijo
+quinoa	que es el amor
+qatar	quien gano la pelea
+quien gano la pelea del siglo	que es ciencia
+que hoteles	que significa lol
+queen	rojadirecta
+rojadirecta	renfe
+renfe	rae
+ryanair	ryanair
+rae	real madrid
+real madrid	repelis
+rtve	romeo santos
+ruralvia	registro civil
+repelis	ripley
+rumbo	ruta 0
+rakuten	segunda mano
+segunda mano	santander
+sport	sat
+santander	seniat
+stradivarius	spotify
+sabadell	skype
+semana santa 2015	sunat
+sepe	sport
+seriesly	semana santa 2015
+seguridad social	stradivarius
+softonic	traductor
+traductor	twitter
+tiempo	tiempo
+twitter	translate
+telecinco	telecinco
+tuenti	tubidy
+translate	test de velocidad
+test de velocidad	tubemate
+telepizza	tuenti
+trivago	traductor ingles español
+teletexto	ultimas noticias
+uned	utorrent
+unicaja	uned
+utorrent	univision
+ultimas noticias	unicaja
+ultima hora	unam
+uterque	unad
+uoc	ups
+uma thurman	uptown funk
+ucm	uasd
+ugr	volaris
+vueling	vueling
+vodafone	vodafone
+vuelos baratos	viva colombia
+via michelin	videos
+vanitatis	visa home
+vida laboral	violetta
+velvet	vuelos baratos
+vertele	visa
+vlc	vegetta777
+venca	
+wordreference	whatsapp
+wikipedia	wikipedia
+whatsapp	wordreference
+wetransfer	www google
+whatsapp web	whatsapp web
+wallapop	walmart
+worten	wetransfer
+www google	whatsapp plus
+winrar	winrar
+wikiloc	wwe
+xiaomi	xiaomi
+xataka	xbox
+xtec	xataka
+xbmc	xbox live
+xunta	xd
+xti	xperia z3
+xiaomi mi4	ximena sariñana
+xanadu	xcaret
+xbox	xperia m2
+xe	xenofobia
+youtube	youtube
+yahoo	yahoo
+yomvi	you
+yoigo	y
+you	yapo
+y	yaske
+yelmo cines	y8
+yahoo mail	youtube mp3
+yaske	yahoo mail
+ylenia	yutu
+zara	zara
+zalando	zalando
+zara home	zara home
+zooplus	zonajobs
+zara kids	zonaprop
+zaragoza	zac efron
+zara hombre	zoom
+zumba	zayn malik
+zoo madrid	zumba
+zapeando	zedd

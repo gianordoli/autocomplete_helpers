@@ -10,7 +10,7 @@ var prettyjson = require('prettyjson');
 
 // 1. Define service
 var service = 'images';
-var google_language_code = 'tr';
+var google_language_code = 'en';
 var uniqueRecords = {};
 
 // 2. Read all records
