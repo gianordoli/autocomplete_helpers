@@ -31,11 +31,16 @@ var init = function(){
 
 	    		for(var i = 0; i < records.length; i++){
 
+	    			var query = records[i].results[j];
+	    			if(records[i].language == 'tr'){
+	    				query = fixTurkishCharacters(query);
+	    			}
+
 	    			for(var j = 0; j < records[i].results.length; j++){
 	    				// console.log(records[i].results[j]);
 						var obj = {
 							letter:  records[i].letter,
-							query: records[i].results[j],
+							query: query,
 							ranking: j,
 						    language_code: records[i].language,
 						    language_name: getLanguageName(records[i].language),
@@ -66,6 +71,18 @@ var init = function(){
 			});	
 		});
 	// });
+}
+
+var fixTurkishCharacters = function(string){
+	var wrongCharacters = ['ý', 'þ', 'ð'];
+	var rightCharacters = ['ı', 'ş', 'ğ'];
+
+	for(var i = 0; i < wrongCharacters.length; i++){
+		while(string.indexOf(wrongCharacters[i]) > -1){
+			string = string.replace(wrongCharacters[i], rightCharacters[i]);
+		}
+	}
+	return string;
 }
 
 var getLanguageName = function(languageCode){

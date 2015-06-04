@@ -5,7 +5,8 @@ import json                 # read/write json
 from pprint import pprint   # Pretty print
 import sys                  # Exit script in case Google starts blocking it
 import chardet
-import re
+# import re
+import time
 
 encodings = {
     'Croatian': 'iso-8859-2',
@@ -13,11 +14,11 @@ encodings = {
     'Slovak': 'iso-8859-2',
     'Czech': 'iso-8859-2',
     'Swedish': 'iso-8859-1',
-    'Turkish': 'iso-8859-5',
+    # 'Turkish': 'iso-8859-5',
     'Lithuanian': 'iso-8859-4'
 }
 
-exceptions = ['youtube', 'wp-content', 'wallpaper', 'promo.capitalradio.co.uk', 'deviantart', 'tsquirrel', 'compass.xbox.com', 'xboxlive.com', 'freehighresolutionimages.org', 'widehdwalls.com', 'nextranks.com', '?', 'football.co.uk', 'wordpress', 'www1.wdr.de', 'feelgrafix.com', 'dreamatico.com', 'img4.allvoices.com', 'funmozar', 'jogandoonline.com.br', 'pinterest', 'bedroomidea', 'valentinescards', 'onepiece.com', 'fansshare.com', 'viraldot.com', 'sharecdn.com', 'coverium.com', 'handson.provocateuse', 'no.hairdresser-models.eu', 'www.web-kuchi.ch', 'media1.gameinformer.com']
+exceptions = ['youtube', 'ytmg.com', 'wp-content', 'wallpaper', 'promo.capitalradio.co.uk', 'deviantart', 'tsquirrel', 'compass.xbox.com', 'xboxlive.com', 'freehighresolutionimages.org', 'widehdwalls.com', 'nextranks.com', '?', 'football.co.uk', 'wordpress', 'www1.wdr.de', 'feelgrafix.com', 'dreamatico.com', 'img4.allvoices.com', 'funmozar', 'jogandoonline.com.br', 'pinterest', 'bedroomidea', 'valentinescards', 'onepiece.com', 'fansshare.com', 'viraldot.com', 'sharecdn.com', 'coverium.com', 'handson.provocateuse', 'no.hairdresser-models.eu', 'www.web-kuchi.ch', 'media1.gameinformer.com']
 extensions = ['.jpg', '.jpeg', '.gif', '.png', '.tif', '.tiff', '.bmp'];
 
 def checkExtension(string):
@@ -90,7 +91,7 @@ jsonFile.close()
 for i in range(len(data)):
 # for i in range(len(data) - 1, 0, -1):
 
-    if(data[i]['language_name'] == 'Hungarian'):
+    if(data[i]['language_name'] == 'Vietnamese'):
 
         # Begin scraping only if:
         # * the record doesn't have an url yet
@@ -106,8 +107,8 @@ for i in range(len(data)):
             try:
                 search = scrape_with_config(config)
                 print(search.serps)
-                print(len(search.serps[0].links))
-                print(len(search.serps[1].links))
+                # print(len(search.serps[0].links))
+                # print(len(search.serps[1].links))
 
                 # No results?
                 if (len(search.serps[0].links) and len(search.serps[1].links)) == 0:
@@ -132,7 +133,12 @@ for i in range(len(data)):
                     else:
                         list_of_links = search.serps[1].links
                     
+                    # print(list_of_links);
+
                     for j in range(len(list_of_links)):
+                        
+                        print(j)
+
                         if checkExtension(list_of_links[j].link) != None and not containsException(list_of_links[j].link):
                             link = list_of_links[j].link
                             break
@@ -153,7 +159,8 @@ for i in range(len(data)):
                     print('>>>>>>>>>>>>>>>>> SAVING <<<<<<<<<<<<<<<<<')
                     jsonFile = open('../db/images_2015_03_24.json', 'w+')
                     jsonFile.write(json.dumps(data, indent=4))
-                    jsonFile.close()            
+                    jsonFile.close() 
+                    time.sleep(5)           
 
             except GoogleSearchError as e:
                 print(e)
