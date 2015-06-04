@@ -31,12 +31,14 @@ var init = function(){
 
 	    		for(var i = 0; i < records.length; i++){
 
-	    			var query = records[i].results[j];
-	    			if(records[i].language == 'tr'){
-	    				query = fixTurkishCharacters(query);
-	    			}
-
 	    			for(var j = 0; j < records[i].results.length; j++){
+
+	    				// Fixing Turkish characters
+		    			var query = records[i].results[j];
+		    			if(records[i].language == 'tr'){
+		    				query = fixTurkishCharacters(query);
+		    			}
+
 	    				// console.log(records[i].results[j]);
 						var obj = {
 							letter:  records[i].letter,
